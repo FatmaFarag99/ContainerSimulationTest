@@ -1,45 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Smart Container Simulation";
+    ViewData["Title"] = "Container Scanner";
 }
 
-<h1>Smart Container Simulation</h1>
+<h1>Container Scanner</h1>
 
-<div>
-    <label>Container ID: </label>
-    <input type="text" id="containerId" placeholder="Enter Container ID" />
-</div>
-<br />
+<label for="containerIdInput">Container ID:</label>
+<input type="text" id="containerIdInput" placeholder="Enter Container ID" />
 
-<div>
-    <label>User ID: </label>
-    <input type="text" id="userId" placeholder="Enter User ID" />
-</div>
-<br />
+<label for="userIdInput">User ID:</label>
+<input type="text" id="userIdInput" placeholder="Enter User ID" />
 
-<div>
-    <label>Quantity (in kg): </label>
-    <input type="number" id="quantity" placeholder="Enter Quantity" min="0" />
-</div>
-<br />
+<button id="generateQRCodeBtn">Generate QR Code</button>
+<button id="createTransactionBtn">Create Transaction</button>
 
-<br />
-<button id="startCycleButton">Start Cycle</button>
-<button id="generateQrCodeButton">Generate QR Code</button>
-<button id="createTransactionButton">Create Transaction</button>
+<div id="notifications"></div>
 
-<br />
-<div id="qrCode">QR Code will appear here</div>
-<br />
-
-<div id="calculatedValue">Calculated Value will appear here</div>
-<br />
-
-<div id="transactionStatus">Transaction Status will appear here</div>
-<br />
-
-<div id="qrCodeScanStatus">QR Code Scan Status will appear here</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.9/signalr.min.js"></script>
-<script src="/js/containerHub.js"></script>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <script src="~/js/containerHub.js"></script>
+}
